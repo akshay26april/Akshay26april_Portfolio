@@ -1,216 +1,119 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
-	
 <head>
-		<!-- Meta -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="Akshay26april - Portfolio Template">
-		<meta name="keywords" content="themes_mountain,personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
-		<meta name="author" content="themes_mountain">
-		<!-- SITE TITLE -->
-		<title>Akshay26april - Personal Portfolio Website</title>
-		<!-- Latest Bootstrap min CSS -->
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">		
-		<!-- Google Font -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800"> 
-		<link rel="preconnect" href="https://fonts.gstatic.com/">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-		<!-- Font Awesome CSS -->
-		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-		<!---meanmenu Css-->
-		<link rel="stylesheet" href="assets/css/meanmenu.css">			
-		<!-- themify-icons CSS -->
-		<link rel="stylesheet" href="assets/fonts/themify-icons.css">	
-		<!-- Style CSS -->
-		<link rel="stylesheet" href="assets/css/style.css">		
-		<link rel="stylesheet" href="assets/css/responsive.css">	
-	        <link rel="stylesheet" href="assets/css/tools.css">
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	
-    <body>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>PDF to WORD Converter</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/fonts/themify-icons.css"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
-		<!-- START PRELOADER -->
-		<div class="preloader">
-			<div class="spinner">
-				<div class="double-bounce1"></div>
-				<div class="double-bounce2"></div>
-			</div>
-		</div>
-		<!-- END PRELOADER -->
-		
-		<!-- Responsive Logo Its Only for Mobile Device -->
-		<div class="top-logo">
-			<a href="index.html"><img src="assets/img/logo.png" alt="logo" /></a>
-		</div>		
+    <style>
+        /* Basic styling for the page (you'll likely want to customize this further) */
+        .converter-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh; /* Ensure content is centered even on smaller screens */
+            text-align: center;
+        }
 
-		<!--Start Home -->
-		<div class="item_main">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="main-menu text-center">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="resume.html">Resume</a></li>
-								<li><a href="service.html">Services</a></li>
-								<li class="logo"><a href="index.html"><img src="assets/img/logo.png" alt="Modest" /></a></li>
-								<li><a href="portfolio.html">Certificates</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="contact.html">Tools</a></li>
-							</ul>
-						</div>
-					</div><!--END COL -->
-				</div><!--END ROW -->					
-					<div class="section-title">
-						<h1>Get All <span>Tools</span></h1>
-						<span class="title_bg">Akshay26april</span>
-					</div>					
-					<div class="row">
-    <div class="col-lg-10 offset-lg-1 col-sm-12 col-xs-12"> 
-        <div class="contact">
-                <div class="row mb-3">  
-		    <div class="form-group col-md-3"> 
-                        <button type="submit" value="JPG to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">JPG to PDF</button>
+        .converter-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .converter-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .file-input {
+            display: none; 
+        }
+
+        .upload-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .download-button {
+            /* Style your download button as needed */
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-menu text-center">
                     </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="WORD to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">WORD to PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="POWERPOINT to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">POWERPOINT to PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="EXCEL to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">EXCEL to PDF</button>
-                    </div>
-                </div>
-		    <div class="row mb-3">  
-		    <div class="form-group col-md-3"> 
-                        <button type="submit" value="HTML to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">HTML to PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="PDF to JPG" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">PDF to JPG</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="PDF to WORD" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">PDF to WORD</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="PDF to POWERPOINT" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">PDF to POWERPOINT</button>
-                    </div>
-                </div>
-                    <div class="row mb-3">  
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="PDF to EXCEL" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">PDF to EXCEL</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="PDF to PDF/A" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">PDF to PDF/A</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Compress PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Compress PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Unlock PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Unlock PDF</button>
-                    </div>
-                </div> 
-                <div class="row"> 
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Edit PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Edit PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Extract pages" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Extract pages</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Merge PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Merge PDF</button>
-                    </div>
-                    <div class="form-group col-md-3"> 
-                        <button type="submit" value="Extract pages" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">Extract pages</button>
-                    </div>
-                </div> 
-                <div class="row"> 
-                    </div> 
-            </form>
+            </div>
         </div>
-    </div> 
-</div><!--END ROW -->
-					<div class="row contact_top_btm">	
-						<div class="offset-lg-1 col-lg-10">
-							<div class="row">
-								<div class="col-lg-4 col-sm-12 col-xs-12">
-									<div class="single_address">
-										<i class="fa fa-map-marker"></i>
-										<h4>Address</h4>
-										<p>Vita, Maharashtra</p>
-									</div>
-									<div class="single_address">
-										<i class="fa fa-phone"></i>
-										<h4>Email</h4>
-										<p>akshay26april.site@gmail.com</p>
-									</div>
-									<div class="single_address">
-										<i class="fa fa-phone"></i>
-										<h4>Phone</h4>
-										<p>(+91) 9370913482</p>
-									</div>
-								</div><!--- END COL -->
-								<div class="col-lg-8 col-sm-12 col-xs-12">
-									<div class="map">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60964.128215629054!2d74.54052895!3d17.25474794319625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc166364940298d%3A0x93a6a5c733ce4d54!2sVita%2C%20Maharashtra%20415311!5e0!3m2!1sen!2sin!4v1711303199948!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-									</div>
-								</div><!--- END COL --> 
-							</div>
-						</div>
-					</div><!-- / END ROW -->
-				</div><!-- / END CONTAINER -->			
-			</div>
 
-		<!-- / START SOCIAL PROFILES -->	
-		<div class="social_profile">
-			<ul>
-				<li><a href="https://www.facebook.com/Akshay26april/" class="f_facebook"><i class="fa fa-facebook" title="Facebook"></i></a></li>
-				<li><a href="https://github.com/akshay26april" class="f_github" title="GitHub"><i class="fab fa-github"></i></a></li>
-				<li><a href="https://twitter.com/Akshay55603V" class="f_twitter"><i class="fa fa-twitter" title="Twitter"></i></a></li>
-				<li><a href="https://www.instagram.com/Akshay26april/" class="f_instagram"><i class="fa fa-instagram" title="Instagram"></i></a></li>
-				<li><a href="https://www.linkedin.com/in/akshay26april/" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>	
-		<!-- / END SOCIAL PROFILES -->	
-	    <script>
-    // JavaScript to handle button clicks and navigation
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="converter-container">
+                    <h1 class="converter-title">PDF to WORD Converter</h1>
+                    <p class="converter-description">Convert your PDF to WORD documents with incredible accuracy.</p>
 
-    document.getElementById('jpgToPdfButton').addEventListener('click', () => {
-        window.location.href = 'jpg-to-pdf.html'; // Replace with your actual page URL
-    });
+                    <input type="file" id="pdfFileInput" class="file-input" accept=".pdf">
+                    <label for="pdfFileInput" class="upload-button">
+                        Select PDF file
+                        <i class="fa fa-upload"></i> 
+                    </label>
 
-    document.getElementById('wordToPdfButton').addEventListener('click', () => {
-        window.location.href = 'word-to-pdf.html'; // Replace with your actual page URL
-    });
+                    <button id="downloadButton" class="download-button">Download WORD</button>
 
-    // ... (Add similar event listeners for other buttons) ...
-</script>
-		
-		<!-- Latest jQuery -->
-			<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-1.12.4.min.js"></script>
-		<!-- Latest compiled and minified Bootstrap -->
-			<script src="assets/bootstrap/js/bootstrap.min.js"></script>				
-		<!-- JQuery Knob -->
-		<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-			<script src="assets/js/jquery.knob.js"></script>			
-		<!-- WayPoints JS -->
-			<script src="assets/js/waypoints.min.js"></script>	
-		<!-- countTo js -->
-			<script src="assets/js/jquery.inview.min.js"></script>			
-		<!-- meanmenu  -->
-			<script src="assets/js/jquery.meanmenu.js"></script>				
-		<!-- scripts js -->
-			<script src="assets/js/scripts.js"></script>
-    </body>
+                    <div id="conversionStatus"></div> 
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // JavaScript for PDF to Word conversion will go here
+
+        const fileInput = document.getElementById('pdfFileInput');
+        const downloadButton = document.getElementById('downloadButton');
+        const conversionStatus = document.getElementById('conversionStatus');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (file && file.type === 'application/pdf') {
+                // 1. Call your PDF to Word conversion function here
+                //    (using your chosen library/API)
+                // 2. Display progress in the conversionStatus div
+                // 3. Upon successful conversion:
+                //    - Make the downloadButton visible
+                //    - Set the download link and filename appropriately
+            } else {
+                conversionStatus.textContent = 'Please select a valid PDF file.';
+            }
+        });
+
+        downloadButton.addEventListener('click', () => {
+            // Trigger the download of the converted Word file
+        });
+    </script>
+
+</body>
 </html>
