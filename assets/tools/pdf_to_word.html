@@ -89,30 +89,37 @@
     </div>
 
     <script>
-        // JavaScript for PDF to Word conversion will go here
+        // ... (previous JavaScript code) ...
 
-        const fileInput = document.getElementById('pdfFileInput');
-        const downloadButton = document.getElementById('downloadButton');
-        const conversionStatus = document.getElementById('conversionStatus');
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
 
-        fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
+    if (file && file.type === 'application/pdf') {
+        selectedFileName.textContent = `Selected file: ${file.name}`;
+        convertButton.disabled = false; // Enable the convert button
+    } else {
+        // ... (handle invalid file selection)
+    }
+});
 
-            if (file && file.type === 'application/pdf') {
-                // 1. Call your PDF to Word conversion function here
-                //    (using your chosen library/API)
-                // 2. Display progress in the conversionStatus div
-                // 3. Upon successful conversion:
-                //    - Make the downloadButton visible
-                //    - Set the download link and filename appropriately
-            } else {
-                conversionStatus.textContent = 'Please select a valid PDF file.';
-            }
-        });
+convertButton.addEventListener('click', () => {
+    // 1. Disable the convert button to prevent multiple clicks
+    convertButton.disabled = true;
 
-        downloadButton.addEventListener('click', () => {
-            // Trigger the download of the converted Word file
-        });
+    // 2. Call your PDF to Word conversion function here
+    //    (using your chosen library/API)
+
+    // 3. Display progress in the conversionStatus div
+
+    // 4. Upon successful conversion:
+    //    - Make the downloadButton visible
+    //    - Set the download link and filename appropriately
+    //    - Re-enable the convert button (if needed for further conversions)
+});
+
+downloadButton.addEventListener('click', () => {
+    // Trigger the download of the converted Word file
+});
     </script>
 
 </body>
