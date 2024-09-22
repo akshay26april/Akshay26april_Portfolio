@@ -78,7 +78,6 @@
 					<div class="row">
     <div class="col-lg-10 offset-lg-1 col-sm-12 col-xs-12"> 
         <div class="contact">
-            <form class="form" name="enq" method="post" action="https://bestwpware.com/html/tm/quader-demo/quader-dark/contact.php" onsubmit="return validation();">
                 <div class="row mb-3">  
 		    <div class="form-group col-md-3"> 
                         <button type="submit" value="JPG to PDF" name="submit" id="submitButton" class="btn btn-contact-bg tool-button" title="Submit Your Message!">JPG to PDF</button>
@@ -182,7 +181,20 @@
 				<li><a href="https://www.linkedin.com/in/akshay26april/" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>	
-		<!-- / END SOCIAL PROFILES -->		
+		<!-- / END SOCIAL PROFILES -->	
+	    <script>
+    // JavaScript to handle button clicks and navigation
+
+    document.getElementById('jpgToPdfButton').addEventListener('click', () => {
+        window.location.href = 'jpg-to-pdf.html'; // Replace with your actual page URL
+    });
+
+    document.getElementById('wordToPdfButton').addEventListener('click', () => {
+        window.location.href = 'word-to-pdf.html'; // Replace with your actual page URL
+    });
+
+    // ... (Add similar event listeners for other buttons) ...
+</script>
 		
 		<!-- Latest jQuery -->
 			<script data-cfasync="false" src="../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-1.12.4.min.js"></script>
